@@ -2,7 +2,6 @@
 # it will load in the data file, create the derived tables,
 # clean the data, and produce meaningful visualizations
 
-import getpass
 import pg8000
 
 import load_data
@@ -13,18 +12,31 @@ import visualize
 
 def setup():
     login = input('Login username: ')
-    secret = getpass.getpass()
+    secret = input('Password: ')
 
     credentials = {'user'    : login,
                 'password': secret, 
                 'database': 'csci403',
                 'host'    : 'ada.mines.edu'}
 
-    db = pg8000.connect(**credentials)
+    return pg8000.connect(**credentials)
 
      
-    return db.cursor()
+    
 
 
 if __name__ == "__main__":
-    cursor = setup()
+    # establish the connection to the database 
+    connection = setup()
+    cursor = connection.cursor()
+
+    # create the table and bulk load the data
+    load_data.create_table(cursor)
+    load_data.bulk_load_csv(connection)
+    connection.commit()
+
+    # create the dervived tables
+
+    # clean the data
+
+    # create visualizations
