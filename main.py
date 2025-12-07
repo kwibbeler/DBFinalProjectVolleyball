@@ -2,8 +2,10 @@
 # it will load in the data file, create the derived tables,
 # clean the data, and produce meaningful visualizations
 
+# external libraries
 import pg8000
 
+# custom libraries
 import load_data
 import clean_data
 import visualize
@@ -20,9 +22,6 @@ def setup():
                 'host'    : 'ada.mines.edu'}
 
     return pg8000.connect(**credentials)
-
-     
-    
 
 
 if __name__ == "__main__":
@@ -57,4 +56,15 @@ if __name__ == "__main__":
     connection.commit()
     print("created aggregate player and team columns")
 
-    # create visualizations
+    cursor.execute("SELECT jersey_number, team_name, total_service_aces, total_service_errors, service_ace_ratio FROM players LIMIT 10;")
+    for row in cursor.fetchall():
+        print(row)
+    # fetch tables and create pandas dataframes
+    df_players, df_team_a, df_team_b = visualize.fetch_tables(cursor)
+
+    # create dictionary of team names
+    team_tables = {'A': df_team_a, 'B': df_team_b}
+
+    # generate visualizations and scouting report
+    visualize.generate_visuals_and_scouting_report(df_players, team_tables)
+

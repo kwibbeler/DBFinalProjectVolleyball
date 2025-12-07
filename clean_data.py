@@ -45,15 +45,12 @@ def replace_empty_strings(cursor):
 
 
 def player_aggregates(cursor):
-    # create column for kills, errors, hit efficiency, aces, serve errors, serve ratio
+    # create column for kills, errors, hit efficiency
     cursor.execute("""
         ALTER TABLE players 
             ADD COLUMN IF NOT EXISTS total_kills INTEGER DEFAULT 0,
             ADD COLUMN IF NOT EXISTS total_hit_errors INTEGER DEFAULT 0,
-            ADD COLUMN IF NOT EXISTS hitting_efficiency NUMERIC,
-            ADD COLUMN IF NOT EXISTS total_service_aces INTEGER DEFAULT 0,
-            ADD COLUMN IF NOT EXISTS total_service_errors INTEGER DEFAULT 0,
-            ADD COLUMN IF NOT EXISTS service_ace_ratio NUMERIC;
+            ADD COLUMN IF NOT EXISTS hitting_efficiency NUMERIC
     """)
 
     # map the player id, to a jersey number and team name
@@ -118,24 +115,6 @@ def player_aggregates(cursor):
         END;
     """)
 
-    # service aces / service errors ratio
-    cursor.execute("""
-        UPDATE players p
-        SET total_service_aces = sub.aces,
-            total_service_errors = sub.errors,
-            service_ace_ratio = CASE WHEN sub.errors > 0 THEN sub.aces::NUMERIC / sub.errors ELSE NULL END
-        FROM (
-            SELECT pm.player_id,
-                COUNT(*) FILTER (WHERE win_reason = 'ace') AS aces,
-                COUNT(*) FILTER (WHERE win_reason = 'serve_error') AS errors
-            FROM volleyball v
-            JOIN players pm
-                ON v.recieve_location = pm.jersey_number
-                AND v.team = pm.team_name
-            GROUP BY pm.player_id
-        ) sub
-        WHERE p.player_id = sub.player_id;
-    """)
 
     # hit type percentages
     hit_types = ['tip', 'roll_shot', 'free_ball', 'off_speed', 'hit', 'overpass', 'blocked']
@@ -248,20 +227,20 @@ def team_aggregates(cursor):
             """)
 
         # service aces / service errors
+        team_code = 'a' if table == 'team_a' else 'b'
         cursor.execute(f"""
             UPDATE {table} t
             SET total_service_aces = sub.aces,
                 total_service_errors = sub.errors,
-                service_ace_ratio = CASE WHEN sub.errors > 0 THEN sub.aces::NUMERIC / sub.errors ELSE NULL END
+                service_ace_ratio = CASE WHEN sub.errors > 0 THEN sub.aces::NUMERIC / sub.errors ELSE 0 END
             FROM (
-                SELECT t.rally_id,
+                SELECT 
                     COUNT(*) FILTER (WHERE r.win_reason = 'ace') AS aces,
                     COUNT(*) FILTER (WHERE r.win_reason = 'serve_error') AS errors
-                FROM {table} t
-                JOIN rallies r ON t.rally_id = r.id
-                GROUP BY t.rally_id
+                FROM rallies r
+                WHERE r.serving_team = '{team_code}'
             ) sub
-            WHERE t.rally_id = sub.rally_id;
+            WHERE 1=1;
         """)
 
 

@@ -166,5 +166,3 @@ def populate_players(cursor):
         WHERE hitter_location IS NOT NULL;
         """)
 
-
-    
