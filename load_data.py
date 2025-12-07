@@ -39,10 +39,10 @@ def bulk_load_csv(connection):
 # this section will create the derived tables from the original table 
 def create_derived_tables(cursor):
     # make sure the tables don't already exist in the database
-    cursor.execute("DROP TABLE IF EXISTS rallies")
-    cursor.execute("DROP TABLE IF EXISTS team_a")
-    cursor.execute("DROP TABLE IF EXISTS team_b")
-    cursor.execute("DROP TABLE IF EXISTS players")
+    cursor.execute("DROP TABLE IF EXISTS rallies CASCADE")
+    cursor.execute("DROP TABLE IF EXISTS team_a CASCADE")
+    cursor.execute("DROP TABLE IF EXISTS team_b CASCADE")
+    cursor.execute("DROP TABLE IF EXISTS players CASCADE")
 
     # rally table
     cursor.execute(""" 

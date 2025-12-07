@@ -55,6 +55,8 @@ if __name__ == "__main__":
         SELECT 'players', COUNT(*) FROM players;
         """)
     print("created derived tables")
+    results = cursor.fetchall()
+    print(results)
     # clean the data
 
     # create visualizations
