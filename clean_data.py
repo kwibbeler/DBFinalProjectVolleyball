@@ -224,6 +224,29 @@ def team_aggregates(cursor):
             END;
         """)
 
+        # hit type percentages
+        hit_types = ['tip', 'roll_shot', 'free_ball', 'off_speed', 'hit', 'overpass', 'blocked']
+        for ht in hit_types:
+            # add a column in the table for each hit type percentage
+            cursor.execute(f"""
+                ALTER TABLE {table} ADD COLUMN IF NOT EXISTS pct_{ht} NUMERIC;
+            """)
+
+        # calculate percentages
+        for ht in hit_types:
+            cursor.execute(f"""
+                UPDATE {table} t
+                SET pct_{ht} = sub.cnt::NUMERIC / NULLIF(total_hits, 0)
+                FROM (
+                    SELECT t.rally_id, COUNT(*) AS cnt
+                    FROM {table} t
+                    JOIN rallies r ON t.rally_id = r.id
+                    WHERE r.hit_type = '{ht}'
+                    GROUP BY t.rally_id
+                ) sub
+                WHERE t.rally_id = sub.rally_id;
+            """)
+
         # service aces / service errors
         cursor.execute(f"""
             UPDATE {table} t
