@@ -49,18 +49,12 @@ if __name__ == "__main__":
     load_data.populate_teamB(cursor)
     load_data.populate_players(cursor)
     connection.commit()
-    cursor.execute("""SELECT 'volleyball' AS table_name, COUNT(*) AS rows FROM volleyball
-        UNION ALL
-        SELECT 'rallies', COUNT(*) FROM rallies
-        UNION ALL
-        SELECT 'teamA', COUNT(*) FROM team_a
-        UNION ALL
-        SELECT 'teamB', COUNT(*) FROM team_b
-        UNION ALL
-        SELECT 'players', COUNT(*) FROM players;
-        """)
     print("created derived tables")
-    results = cursor.fetchall()
-    print(results)
+
+    # add aggregate columns to the tables 
+    clean_data.player_aggregates(cursor)
+    clean_data.team_aggregates(cursor)
+    connection.commit()
+    print("created aggregate player and team columns")
 
     # create visualizations
