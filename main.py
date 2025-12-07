@@ -36,7 +36,25 @@ if __name__ == "__main__":
     connection.commit()
 
     # create the dervived tables
-
+    load_data.create_derived_tables(cursor)
+    # make sure to not create duplicate entries in the tables
+    cursor.execute("TRUNCATE rallies, team_a, team_b, players RESTART IDENTITY CASCADE;")
+    load_data.populate_rallies(cursor)
+    load_data.populate_teamA(cursor)
+    load_data.populate_teamB(cursor)
+    load_data.populate_players(cursor)
+    connection.commit()
+    cursor.execute("""SELECT 'volleyball' AS table_name, COUNT(*) AS rows FROM volleyball
+        UNION ALL
+        SELECT 'rallies', COUNT(*) FROM rallies
+        UNION ALL
+        SELECT 'teamA', COUNT(*) FROM team_a
+        UNION ALL
+        SELECT 'teamB', COUNT(*) FROM team_b
+        UNION ALL
+        SELECT 'players', COUNT(*) FROM players;
+        """)
+    print("created derived tables")
     # clean the data
 
     # create visualizations
