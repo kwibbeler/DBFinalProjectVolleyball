@@ -5,7 +5,7 @@
 import pg8000
 
 import load_data
-import clean
+import clean_data
 import visualize
 
 
@@ -35,6 +35,11 @@ if __name__ == "__main__":
     load_data.bulk_load_csv(connection)
     connection.commit()
 
+    # clean the data
+    clean_data.replace_empty_strings(cursor)
+    clean_data.standardize_columns(cursor)
+    connection.commit()
+
     # create the dervived tables
     load_data.create_derived_tables(cursor)
     # make sure to not create duplicate entries in the tables
@@ -57,6 +62,5 @@ if __name__ == "__main__":
     print("created derived tables")
     results = cursor.fetchall()
     print(results)
-    # clean the data
 
     # create visualizations
