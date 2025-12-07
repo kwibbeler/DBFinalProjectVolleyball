@@ -1,0 +1,382 @@
+Scouting Report - Team A
+==================================================
+
+Number of players: 22
+
+Player 19:
+  Total Hits: 0
+  Total Kills: 0
+  Total Hit Errors: 0
+  Hitting Efficiency: nan
+  Total Service Aces: 0
+  Total Service Errors: 0
+  Service Ace/Error Ratio: 0.00
+  Hit Type Percentages:
+    tip: nan
+    roll_shot: nan
+    free_ball: nan
+    off_speed: nan
+    hit: nan
+    overpass: nan
+    blocked: nan
+
+Player 5:
+  Total Hits: 2
+  Total Kills: 0
+  Total Hit Errors: 0
+  Hitting Efficiency: 0.00
+  Total Service Aces: 0
+  Total Service Errors: 0
+  Service Ace/Error Ratio: 0.00
+  Hit Type Percentages:
+    tip: nan
+    roll_shot: nan
+    free_ball: 1.00
+    off_speed: nan
+    hit: nan
+    overpass: nan
+    blocked: nan
+
+Player 4:
+  Total Hits: 1
+  Total Kills: 0
+  Total Hit Errors: 0
+  Hitting Efficiency: 0.00
+  Total Service Aces: 0
+  Total Service Errors: 0
+  Service Ace/Error Ratio: 0.00
+  Hit Type Percentages:
+    tip: nan
+    roll_shot: nan
+    free_ball: 1.00
+    off_speed: nan
+    hit: nan
+    overpass: nan
+    blocked: nan
+
+Player 2:
+  Total Hits: 1
+  Total Kills: 0
+  Total Hit Errors: 1
+  Hitting Efficiency: -1.00
+  Total Service Aces: 0
+  Total Service Errors: 0
+  Service Ace/Error Ratio: 0.00
+  Hit Type Percentages:
+    tip: nan
+    roll_shot: nan
+    free_ball: 1.00
+    off_speed: nan
+    hit: nan
+    overpass: nan
+    blocked: nan
+
+Player 23:
+  Total Hits: 2
+  Total Kills: 0
+  Total Hit Errors: 0
+  Hitting Efficiency: 0.00
+  Total Service Aces: 0
+  Total Service Errors: 0
+  Service Ace/Error Ratio: 0.00
+  Hit Type Percentages:
+    tip: nan
+    roll_shot: nan
+    free_ball: 1.00
+    off_speed: nan
+    hit: nan
+    overpass: nan
+    blocked: nan
+
+Player 1:
+  Total Hits: 1
+  Total Kills: 0
+  Total Hit Errors: 0
+  Hitting Efficiency: 0.00
+  Total Service Aces: 0
+  Total Service Errors: 0
+  Service Ace/Error Ratio: 0.00
+  Hit Type Percentages:
+    tip: nan
+    roll_shot: nan
+    free_ball: 1.00
+    off_speed: nan
+    hit: nan
+    overpass: nan
+    blocked: nan
+
+Player 18:
+  Total Hits: 2
+  Total Kills: 0
+  Total Hit Errors: 0
+  Hitting Efficiency: 0.00
+  Total Service Aces: 0
+  Total Service Errors: 0
+  Service Ace/Error Ratio: 0.00
+  Hit Type Percentages:
+    tip: nan
+    roll_shot: nan
+    free_ball: 1.00
+    off_speed: nan
+    hit: nan
+    overpass: nan
+    blocked: nan
+
+Player 3:
+  Total Hits: 3
+  Total Kills: 0
+  Total Hit Errors: 0
+  Hitting Efficiency: 0.00
+  Total Service Aces: 0
+  Total Service Errors: 0
+  Service Ace/Error Ratio: 0.00
+  Hit Type Percentages:
+    tip: nan
+    roll_shot: nan
+    free_ball: 0.33
+    off_speed: 0.67
+    hit: nan
+    overpass: nan
+    blocked: nan
+
+Player 17:
+  Total Hits: 2
+  Total Kills: 1
+  Total Hit Errors: 0
+  Hitting Efficiency: 0.50
+  Total Service Aces: 0
+  Total Service Errors: 0
+  Service Ace/Error Ratio: 0.00
+  Hit Type Percentages:
+    tip: nan
+    roll_shot: nan
+    free_ball: 0.50
+    off_speed: nan
+    hit: 0.50
+    overpass: nan
+    blocked: nan
+
+Player 11:
+  Total Hits: 189
+  Total Kills: 57
+  Total Hit Errors: 17
+  Hitting Efficiency: 0.21
+  Total Service Aces: 0
+  Total Service Errors: 0
+  Service Ace/Error Ratio: 0.00
+  Hit Type Percentages:
+    tip: 0.05
+    roll_shot: 0.02
+    free_ball: 0.03
+    off_speed: 0.06
+    hit: 0.63
+    overpass: 0.01
+    blocked: 0.20
+
+Player 10:
+  Total Hits: 15
+  Total Kills: 1
+  Total Hit Errors: 0
+  Hitting Efficiency: 0.07
+  Total Service Aces: 0
+  Total Service Errors: 0
+  Service Ace/Error Ratio: 0.00
+  Hit Type Percentages:
+    tip: nan
+    roll_shot: 0.07
+    free_ball: nan
+    off_speed: 0.40
+    hit: 0.33
+    overpass: nan
+    blocked: 0.20
+
+Player 15:
+  Total Hits: 313
+  Total Kills: 115
+  Total Hit Errors: 24
+  Hitting Efficiency: 0.29
+  Total Service Aces: 0
+  Total Service Errors: 0
+  Service Ace/Error Ratio: 0.00
+  Hit Type Percentages:
+    tip: 0.06
+    roll_shot: 0.05
+    free_ball: 0.01
+    off_speed: 0.08
+    hit: 0.66
+    overpass: 0.00
+    blocked: 0.12
+
+Player 6:
+  Total Hits: 61
+  Total Kills: 11
+  Total Hit Errors: 9
+  Hitting Efficiency: 0.03
+  Total Service Aces: 0
+  Total Service Errors: 0
+  Service Ace/Error Ratio: 0.00
+  Hit Type Percentages:
+    tip: 0.02
+    roll_shot: 0.02
+    free_ball: 0.03
+    off_speed: 0.05
+    hit: 0.72
+    overpass: nan
+    blocked: 0.16
+
+Player 9:
+  Total Hits: 17
+  Total Kills: 4
+  Total Hit Errors: 2
+  Hitting Efficiency: 0.12
+  Total Service Aces: 0
+  Total Service Errors: 0
+  Service Ace/Error Ratio: 0.00
+  Hit Type Percentages:
+    tip: nan
+    roll_shot: 0.06
+    free_ball: 0.06
+    off_speed: 0.18
+    hit: 0.65
+    overpass: nan
+    blocked: 0.06
+
+Player 8:
+  Total Hits: 33
+  Total Kills: 11
+  Total Hit Errors: 5
+  Hitting Efficiency: 0.18
+  Total Service Aces: 0
+  Total Service Errors: 0
+  Service Ace/Error Ratio: 0.00
+  Hit Type Percentages:
+    tip: 0.09
+    roll_shot: 0.03
+    free_ball: 0.03
+    off_speed: nan
+    hit: 0.79
+    overpass: 0.03
+    blocked: 0.03
+
+Player 16:
+  Total Hits: 3
+  Total Kills: 0
+  Total Hit Errors: 0
+  Hitting Efficiency: 0.00
+  Total Service Aces: 0
+  Total Service Errors: 0
+  Service Ace/Error Ratio: 0.00
+  Hit Type Percentages:
+    tip: nan
+    roll_shot: nan
+    free_ball: 0.67
+    off_speed: nan
+    hit: nan
+    overpass: nan
+    blocked: 0.33
+
+Player 26:
+  Total Hits: 16
+  Total Kills: 0
+  Total Hit Errors: 2
+  Hitting Efficiency: -0.12
+  Total Service Aces: 0
+  Total Service Errors: 0
+  Service Ace/Error Ratio: 0.00
+  Hit Type Percentages:
+    tip: 0.12
+    roll_shot: 0.06
+    free_ball: 0.19
+    off_speed: 0.06
+    hit: 0.38
+    overpass: nan
+    blocked: 0.19
+
+Player 25:
+  Total Hits: 4
+  Total Kills: 0
+  Total Hit Errors: 0
+  Hitting Efficiency: 0.00
+  Total Service Aces: 0
+  Total Service Errors: 0
+  Service Ace/Error Ratio: 0.00
+  Hit Type Percentages:
+    tip: nan
+    roll_shot: nan
+    free_ball: 0.75
+    off_speed: nan
+    hit: nan
+    overpass: nan
+    blocked: 0.25
+
+Player 12:
+  Total Hits: 26
+  Total Kills: 10
+  Total Hit Errors: 1
+  Hitting Efficiency: 0.35
+  Total Service Aces: 0
+  Total Service Errors: 0
+  Service Ace/Error Ratio: 0.00
+  Hit Type Percentages:
+    tip: 0.04
+    roll_shot: 0.04
+    free_ball: 0.04
+    off_speed: 0.12
+    hit: 0.69
+    overpass: nan
+    blocked: 0.08
+
+Player 13:
+  Total Hits: 113
+  Total Kills: 46
+  Total Hit Errors: 7
+  Hitting Efficiency: 0.35
+  Total Service Aces: 0
+  Total Service Errors: 0
+  Service Ace/Error Ratio: 0.00
+  Hit Type Percentages:
+    tip: 0.04
+    roll_shot: 0.04
+    free_ball: 0.02
+    off_speed: 0.05
+    hit: 0.75
+    overpass: 0.01
+    blocked: 0.09
+
+Player 7:
+  Total Hits: 15
+  Total Kills: 2
+  Total Hit Errors: 2
+  Hitting Efficiency: 0.00
+  Total Service Aces: 0
+  Total Service Errors: 0
+  Service Ace/Error Ratio: 0.00
+  Hit Type Percentages:
+    tip: nan
+    roll_shot: 0.07
+    free_ball: 0.40
+    off_speed: 0.13
+    hit: 0.33
+    overpass: nan
+    blocked: 0.07
+
+Player 14:
+  Total Hits: 106
+  Total Kills: 43
+  Total Hit Errors: 3
+  Hitting Efficiency: 0.38
+  Total Service Aces: 0
+  Total Service Errors: 0
+  Service Ace/Error Ratio: 0.00
+  Hit Type Percentages:
+    tip: 0.14
+    roll_shot: 0.02
+    free_ball: 0.01
+    off_speed: 0.05
+    hit: 0.68
+    overpass: nan
+    blocked: 0.10
+
+Plots included:
+  Radar plot: radar_team_A.png
+  Service ratio: service_ratio_team_A.png

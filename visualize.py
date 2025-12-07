@@ -93,19 +93,28 @@ def boxplot_stats(df_players, stat, team):
     print(f"Boxplot saved as {filename}")
 
 
-def boxplot_team_comparison(df_team_a, df_team_b, stat):
+def boxplot_team_comparison(df_team_a, df_team_b, stat, team_names):
+    # unpack real team names
+    team_a_name, team_b_name = team_names
+
+    # assign team column
     df_a = df_team_a.copy()
     df_b = df_team_b.copy()
-    df_a['team'] = 'A'
-    df_b['team'] = 'B'
-    df = pd.concat([df_a, df_b])
-    
-    plt.figure(figsize=(8,5))
+    df_a['team'] = team_a_name
+    df_b['team'] = team_b_name
+
+    # combined dataframe
+    df = pd.concat([df_a, df_b], ignore_index=True)
+
+    # make plot
+    plt.figure(figsize=(8, 5))
     sns.boxplot(x='team', y=stat, data=df)
-    plt.title(f"{stat.replace('_',' ').title()} Comparison Between Teams")
-    plt.ylabel(stat.replace('_',' ').title())
-    
-    filename = os.path.join(PLOTS_DIR, f"boxplot_{stat}_teams_comparison.png")
+    plt.title(f"{stat.replace('_', ' ').title()} Comparison: {team_a_name} vs {team_b_name}")
+    plt.ylabel(stat.replace('_', ' ').title())
+
+    # clean filename
+    filename = os.path.join(PLOTS_DIR, f"boxplot_{stat}_{team_a_name.lower()}_vs_{team_b_name.lower()}.png")
+
     plt.savefig(filename, bbox_inches='tight')
     plt.close()
     print(f"Team comparison boxplot saved as {filename}")
@@ -124,6 +133,8 @@ def service_ratio_plot(df_team, team, team_dir):
     plt.savefig(filename, bbox_inches='tight')
     plt.close()
     print(f"Service ratio plot saved as {filename}")
+
+
 def create_scouting_report(df_players, team, team_dir):
     df_team = df_players[df_players['team_name'].str.lower() == team.lower()]
     
@@ -184,7 +195,7 @@ def generate_visuals_and_scouting_report(df_players, team_tables):
     
     # create comparison boxplots if have stats for more than one team
     if len(team_tables) >= 2:
-        stats_to_compare = ['hitting_efficiency', 'service_ace_ratio', 'total_kills', 'total_hits']
+        stats_to_compare = ['hitting_efficiency', 'total_kills', 'total_hits']
         team_names = list(team_tables.keys())
         
         for stat in stats_to_compare:

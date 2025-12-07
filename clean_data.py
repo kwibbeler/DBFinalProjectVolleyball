@@ -234,11 +234,12 @@ def team_aggregates(cursor):
                 total_service_errors = sub.errors,
                 service_ace_ratio = CASE WHEN sub.errors > 0 THEN sub.aces::NUMERIC / sub.errors ELSE 0 END
             FROM (
-                SELECT 
+                SELECT
                     COUNT(*) FILTER (WHERE r.win_reason = 'ace') AS aces,
                     COUNT(*) FILTER (WHERE r.win_reason = 'serve_error') AS errors
                 FROM rallies r
-                WHERE r.serving_team = '{team_code}'
+                WHERE r.round = 1
+                AND r.team = '{team_code}'
             ) sub
             WHERE 1=1;
         """)

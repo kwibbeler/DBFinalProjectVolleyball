@@ -56,9 +56,6 @@ if __name__ == "__main__":
     connection.commit()
     print("created aggregate player and team columns")
 
-    cursor.execute("SELECT jersey_number, team_name, total_service_aces, total_service_errors, service_ace_ratio FROM players LIMIT 10;")
-    for row in cursor.fetchall():
-        print(row)
     # fetch tables and create pandas dataframes
     df_players, df_team_a, df_team_b = visualize.fetch_tables(cursor)
 
