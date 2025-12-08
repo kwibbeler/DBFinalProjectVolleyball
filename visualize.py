@@ -115,8 +115,8 @@ def boxplot_team_comparison(df_team_a, df_team_b, stat, team_names):
     print(f"Team comparison boxplot saved as {filename}")
 
 def service_ratio_plot(df_team, team, team_dir):
-    total_aces = df_team['total_service_aces'].sum()
-    total_errors = df_team['total_service_errors'].sum()
+    total_aces = df_team['total_service_aces'].sum(skipna=True)
+    total_errors = df_team['total_service_errors'].sum(skipna=True)
     ratio = total_aces / total_errors if total_errors > 0 else 0
 
     plt.figure(figsize=(6,5))
@@ -141,9 +141,9 @@ def create_scouting_report(df_players, df_team, team, team_dir):
         
         # team summary stats
         f.write("Team Summary Statistics:\n")
-        f.write(f"  Total Hits: {df_team_players['total_hits'].sum()}\n")
-        f.write(f"  Total Kills: {df_team_players['total_kills'].sum()}\n")
-        f.write(f"  Total Hit Errors: {df_team_players['total_hit_errors'].sum()}\n")
+        f.write(f"  Total Hits: {df_team_players['total_hits'].sum(skipna=True)}\n")
+        f.write(f"  Total Kills: {df_team_players['total_kills'].sum(skipna=True)}\n")
+        f.write(f"  Total Hit Errors: {df_team_players['total_hit_errors'].sum(skipna=True)}\n")
         f.write(f"  Average Hitting Efficiency: {df_team_players['hitting_efficiency'].mean():.2f}\n")
         
         # serving stats

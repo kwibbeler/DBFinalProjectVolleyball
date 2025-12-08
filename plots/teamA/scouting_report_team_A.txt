@@ -5,12 +5,12 @@ Number of players: 22
 
 Team Summary Statistics:
   Total Hits: 925
-  Total Kills: 301
-  Total Hit Errors: 73
-  Average Hitting Efficiency: 0.06
-  Total Service Aces: 30420
+  Total Kills: 301.0
+  Total Hit Errors: 73.0
+  Average Hitting Efficiency: 0.21
+  Total Service Aces: 180180
   Total Service Errors: 149760
-  Service Ace/Error Ratio: 0.20
+  Service Ace/Error Ratio: 1.20
 
   tip: 0.07
   roll_shot: 0.04
@@ -23,134 +23,134 @@ Team Summary Statistics:
 Player Details:
 Player 19:
   Total Hits: 0
-  Total Kills: 0
-  Total Hit Errors: 0
+  Total Kills: nan
+  Total Hit Errors: nan
   Hitting Efficiency: nan
 
 Player 5:
   Total Hits: 2
-  Total Kills: 0
-  Total Hit Errors: 0
-  Hitting Efficiency: 0.00
+  Total Kills: nan
+  Total Hit Errors: nan
+  Hitting Efficiency: nan
 
 Player 4:
   Total Hits: 1
-  Total Kills: 0
-  Total Hit Errors: 0
-  Hitting Efficiency: 0.00
+  Total Kills: nan
+  Total Hit Errors: nan
+  Hitting Efficiency: nan
 
 Player 2:
   Total Hits: 1
-  Total Kills: 0
-  Total Hit Errors: 1
-  Hitting Efficiency: -1.00
+  Total Kills: nan
+  Total Hit Errors: 1.0
+  Hitting Efficiency: nan
 
 Player 23:
   Total Hits: 2
-  Total Kills: 0
-  Total Hit Errors: 0
-  Hitting Efficiency: 0.00
+  Total Kills: nan
+  Total Hit Errors: nan
+  Hitting Efficiency: nan
 
 Player 1:
   Total Hits: 1
-  Total Kills: 0
-  Total Hit Errors: 0
-  Hitting Efficiency: 0.00
+  Total Kills: nan
+  Total Hit Errors: nan
+  Hitting Efficiency: nan
 
 Player 18:
   Total Hits: 2
-  Total Kills: 0
-  Total Hit Errors: 0
-  Hitting Efficiency: 0.00
+  Total Kills: nan
+  Total Hit Errors: nan
+  Hitting Efficiency: nan
 
 Player 3:
   Total Hits: 3
-  Total Kills: 0
-  Total Hit Errors: 0
-  Hitting Efficiency: 0.00
+  Total Kills: nan
+  Total Hit Errors: nan
+  Hitting Efficiency: nan
 
 Player 17:
   Total Hits: 2
-  Total Kills: 1
-  Total Hit Errors: 0
-  Hitting Efficiency: 0.50
+  Total Kills: 1.0
+  Total Hit Errors: nan
+  Hitting Efficiency: nan
 
 Player 11:
   Total Hits: 189
-  Total Kills: 57
-  Total Hit Errors: 17
+  Total Kills: 57.0
+  Total Hit Errors: 17.0
   Hitting Efficiency: 0.21
 
 Player 10:
   Total Hits: 15
-  Total Kills: 1
-  Total Hit Errors: 0
-  Hitting Efficiency: 0.07
+  Total Kills: 1.0
+  Total Hit Errors: nan
+  Hitting Efficiency: nan
 
 Player 15:
   Total Hits: 313
-  Total Kills: 115
-  Total Hit Errors: 24
+  Total Kills: 115.0
+  Total Hit Errors: 24.0
   Hitting Efficiency: 0.29
 
 Player 6:
   Total Hits: 61
-  Total Kills: 11
-  Total Hit Errors: 9
+  Total Kills: 11.0
+  Total Hit Errors: 9.0
   Hitting Efficiency: 0.03
 
 Player 9:
   Total Hits: 17
-  Total Kills: 4
-  Total Hit Errors: 2
+  Total Kills: 4.0
+  Total Hit Errors: 2.0
   Hitting Efficiency: 0.12
 
 Player 8:
   Total Hits: 33
-  Total Kills: 11
-  Total Hit Errors: 5
+  Total Kills: 11.0
+  Total Hit Errors: 5.0
   Hitting Efficiency: 0.18
 
 Player 16:
   Total Hits: 3
-  Total Kills: 0
-  Total Hit Errors: 0
-  Hitting Efficiency: 0.00
+  Total Kills: nan
+  Total Hit Errors: nan
+  Hitting Efficiency: nan
 
 Player 26:
   Total Hits: 16
-  Total Kills: 0
-  Total Hit Errors: 2
-  Hitting Efficiency: -0.12
+  Total Kills: nan
+  Total Hit Errors: 2.0
+  Hitting Efficiency: nan
 
 Player 25:
   Total Hits: 4
-  Total Kills: 0
-  Total Hit Errors: 0
-  Hitting Efficiency: 0.00
+  Total Kills: nan
+  Total Hit Errors: nan
+  Hitting Efficiency: nan
 
 Player 12:
   Total Hits: 26
-  Total Kills: 10
-  Total Hit Errors: 1
+  Total Kills: 10.0
+  Total Hit Errors: 1.0
   Hitting Efficiency: 0.35
 
 Player 13:
   Total Hits: 113
-  Total Kills: 46
-  Total Hit Errors: 7
+  Total Kills: 46.0
+  Total Hit Errors: 7.0
   Hitting Efficiency: 0.35
 
 Player 7:
   Total Hits: 15
-  Total Kills: 2
-  Total Hit Errors: 2
+  Total Kills: 2.0
+  Total Hit Errors: 2.0
   Hitting Efficiency: 0.00
 
 Player 14:
   Total Hits: 106
-  Total Kills: 43
-  Total Hit Errors: 3
+  Total Kills: 43.0
+  Total Hit Errors: 3.0
   Hitting Efficiency: 0.38
 
 Plots included:

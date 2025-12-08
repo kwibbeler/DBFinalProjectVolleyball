@@ -48,8 +48,8 @@ def player_aggregates(cursor):
     # create column for kills, errors, hit efficiency
     cursor.execute("""
         ALTER TABLE players 
-            ADD COLUMN IF NOT EXISTS total_kills INTEGER DEFAULT 0,
-            ADD COLUMN IF NOT EXISTS total_hit_errors INTEGER DEFAULT 0,
+            ADD COLUMN IF NOT EXISTS total_kills INTEGER ,
+            ADD COLUMN IF NOT EXISTS total_hit_errors INTEGER,
             ADD COLUMN IF NOT EXISTS hitting_efficiency NUMERIC
     """)
 
@@ -142,12 +142,12 @@ def team_aggregates(cursor):
     for table in ['team_a', 'team_b']:
         cursor.execute(f"""
             ALTER TABLE {table} 
-                ADD COLUMN IF NOT EXISTS total_kills INTEGER DEFAULT 0,
-                ADD COLUMN IF NOT EXISTS total_hit_errors INTEGER DEFAULT 0,
-                ADD COLUMN IF NOT EXISTS total_hits INTEGER DEFAULT 0,
+                ADD COLUMN IF NOT EXISTS total_kills INTEGER ,
+                ADD COLUMN IF NOT EXISTS total_hit_errors INTEGER,
+                ADD COLUMN IF NOT EXISTS total_hits INTEGER ,
                 ADD COLUMN IF NOT EXISTS hitting_efficiency NUMERIC,
-                ADD COLUMN IF NOT EXISTS total_service_aces INTEGER DEFAULT 0,
-                ADD COLUMN IF NOT EXISTS total_service_errors INTEGER DEFAULT 0,
+                ADD COLUMN IF NOT EXISTS total_service_aces INTEGER,
+                ADD COLUMN IF NOT EXISTS total_service_errors INTEGER,
                 ADD COLUMN IF NOT EXISTS service_ace_ratio NUMERIC;
         """)
     
@@ -229,18 +229,24 @@ def team_aggregates(cursor):
         # service aces / service errors
         team_code = 'a' if table == 'team_a' else 'b'
         cursor.execute(f"""
-            UPDATE {table} t
-            SET total_service_aces = sub.aces,
-                total_service_errors = sub.errors,
-                service_ace_ratio = CASE WHEN sub.errors > 0 THEN sub.aces::NUMERIC / sub.errors ELSE 0 END
-            FROM (
+            WITH service_counts AS (
                 SELECT
-                    COUNT(*) FILTER (WHERE r.win_reason = 'ace') AS aces,
-                    COUNT(*) FILTER (WHERE r.win_reason = 'serve_error') AS errors
+                    COUNT(*) AS total_service_aces,
+                    COUNT(*) FILTER (WHERE r.win_reason = 'serve_error') AS total_service_errors
                 FROM rallies r
                 WHERE r.round = 1
                 AND r.team = '{team_code}'
-            ) sub
+                AND r.win_reason IN ('ace', 'serve_error')
+            )
+            UPDATE {table}
+            SET total_service_aces = sc.total_service_aces,
+                total_service_errors = sc.total_service_errors,
+                service_ace_ratio = CASE 
+                                    WHEN sc.total_service_errors > 0 
+                                    THEN sc.total_service_aces::NUMERIC / sc.total_service_errors 
+                                    ELSE 0 
+                                    END
+            FROM service_counts sc
             WHERE 1=1;
         """)
 
