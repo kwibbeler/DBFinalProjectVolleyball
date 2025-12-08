@@ -42,23 +42,23 @@ Specifically, the project aims to:
 - References to generated plots for easy access
 
 #### Sample Team Summary Statistics
-Team Summary Statistics:
-Total Hits: 432
-Total Kills: 210
-Total Hit Errors: 45
-Average Hitting Efficiency: 0.39
-Total Service Aces: 25
-Total Service Errors: 12
-Service Ace/Error Ratio: 2.08
+- Team Summary Statistics:
+- Total Hits: 432
+- Total Kills: 210
+- Total Hit Errors: 45
+- Average Hitting Efficiency: 0.39
+- Total Service Aces: 25
+- Total Service Errors: 12
+- Service Ace/Error Ratio: 2.08
 
-Hit Type Percentages:
-tip: 0.12
-roll_shot: 0.08
-free_ball: 0.05
-off_speed: 0.07
-hit: 0.52
-overpass: 0.10
-blocked: 0.06
+- Hit Type Percentages:
+- tip: 0.12
+- roll_shot: 0.08
+- free_ball: 0.05
+- off_speed: 0.07
+- hit: 0.52
+- overpass: 0.10
+- blocked: 0.06
 
 ---
 
@@ -99,29 +99,31 @@ python `main.py`
 
 Output:
 
-*Plots saved in plots/ directory
-*Scouting reports saved in plots/teamA/ and plots/teamB/
+- Plots saved in plots/ directory
+- Scouting reports saved in plots/teamA/ and plots/teamB/
 
 ---
 
 ## Project Structure
 
-├── main.py                  # Main script to generate reports and plots
-├── visualize.py             # Visualization functions
-├── database_setup.sql       # Example schema for players, team_a, team_b
-├── plots/                   # Generated plots
+```text
+├── main.py                 
+├── visualize.py             
+├── database_setup.sql      
+├── plots/                   
 │   ├── teamA/
 │   └── teamB/
-├── README.md                # Project documentation
-└── requirements.txt         # Python dependencies
+├── README.md               
+└── requirements.txt    
+```   
 
 ---
 
 ## Dependencies
 
-*Python 3.12+
-*pandas
-*numpy
-*matplotlib
-*seaborn
-*SQL database connection
+- Python 3.12+
+- pandas
+- numpy
+- matplotlib
+- seaborn
+- SQL database connection
