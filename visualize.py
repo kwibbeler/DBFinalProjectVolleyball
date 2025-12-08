@@ -47,7 +47,7 @@ def player_radial_plot_hit_types(df_players_team, team, team_dir):
     plt.title(f"Hit Type Percentages - Team {team.upper()}")
     plt.legend(loc='upper right', bbox_to_anchor=(1.3, 1.1))
     
-    filename = os.path.join(team_dir, f"player_{player['jersey_number']}_hit_types_team{team.upper()}.png")
+    filename = os.path.join(team_dir, f"hit_types_team{team.upper()}.png")
     plt.savefig(filename, bbox_inches='tight')
     plt.close()
     print(f"Radar plot saved as {filename}")
@@ -80,41 +80,36 @@ def team_radial_plot_hit_types(df_team, team):
     plt.close()
     print(f"Team radial plot saved as {filename}")
 
-def boxplot_stats(df_players, stat, team):
-    df_team = df_players[df_players['team_name'].str.lower() == team.lower()]
-    plt.figure(figsize=(8,5))
-    sns.boxplot(data=df_team, y=stat)
-    plt.title(f"{stat.replace('_',' ').title()} Distribution - Team {team.upper()}")
-    plt.ylabel(stat.replace('_',' ').title())
-    
-    filename = os.path.join(PLOTS_DIR, f"boxplot_{stat}_team_{team.upper()}.png")
-    plt.savefig(filename, bbox_inches='tight')
-    plt.close()
-    print(f"Boxplot saved as {filename}")
-
 
 def boxplot_team_comparison(df_team_a, df_team_b, stat, team_names):
-    # unpack real team names
     team_a_name, team_b_name = team_names
 
-    # assign team column
+    # copy dataframes
     df_a = df_team_a.copy()
     df_b = df_team_b.copy()
+
+    # only keep the stat we want
+    if stat not in df_a.columns or stat not in df_b.columns:
+        print(f"Warning: Stat {stat} not found in one of the teams. Skipping comparison.")
+        return
+
+    df_a = df_a[[stat]].copy()
+    df_b = df_b[[stat]].copy()
+
+    # add team column
     df_a['team'] = team_a_name
     df_b['team'] = team_b_name
 
-    # combined dataframe
+    # combine
     df = pd.concat([df_a, df_b], ignore_index=True)
 
-    # make plot
+    # plot
     plt.figure(figsize=(8, 5))
     sns.boxplot(x='team', y=stat, data=df)
-    plt.title(f"{stat.replace('_', ' ').title()} Comparison: {team_a_name} vs {team_b_name}")
-    plt.ylabel(stat.replace('_', ' ').title())
-
-    # clean filename
+    plt.title(f"{stat.replace('_',' ').title()} Comparison: {team_a_name} vs {team_b_name}")
+    plt.ylabel(stat.replace('_',' ').title())
+    
     filename = os.path.join(PLOTS_DIR, f"boxplot_{stat}_{team_a_name.lower()}_vs_{team_b_name.lower()}.png")
-
     plt.savefig(filename, bbox_inches='tight')
     plt.close()
     print(f"Team comparison boxplot saved as {filename}")
@@ -135,72 +130,82 @@ def service_ratio_plot(df_team, team, team_dir):
     print(f"Service ratio plot saved as {filename}")
 
 
-def create_scouting_report(df_players, team, team_dir):
-    df_team = df_players[df_players['team_name'].str.lower() == team.lower()]
+def create_scouting_report(df_players, df_team, team, team_dir):
+    df_team_players = df_players[df_players['team_name'].str.lower() == team.lower()]
     
     report_filename = os.path.join(team_dir, f"scouting_report_team_{team.upper()}.txt")
     with open(report_filename, "w") as f:
         f.write(f"Scouting Report - Team {team.upper()}\n")
         f.write("="*50 + "\n\n")
-        f.write(f"Number of players: {len(df_team)}\n\n")
+        f.write(f"Number of players: {len(df_team_players)}\n\n")
         
-        for _, player in df_team.iterrows():
+        # team summary stats
+        f.write("Team Summary Statistics:\n")
+        f.write(f"  Total Hits: {df_team_players['total_hits'].sum()}\n")
+        f.write(f"  Total Kills: {df_team_players['total_kills'].sum()}\n")
+        f.write(f"  Total Hit Errors: {df_team_players['total_hit_errors'].sum()}\n")
+        f.write(f"  Average Hitting Efficiency: {df_team_players['hitting_efficiency'].mean():.2f}\n")
+        
+        # serving stats
+        total_aces = df_team['total_service_aces'].sum(skipna=True) if 'total_service_aces' in df_team.columns else 0
+        total_errors = df_team['total_service_errors'].sum(skipna=True) if 'total_service_errors' in df_team.columns else 0
+        service_ratio = total_aces / total_errors if total_errors > 0 else 0
+        f.write(f"  Total Service Aces: {total_aces}\n")
+        f.write(f"  Total Service Errors: {total_errors}\n")
+        f.write(f"  Service Ace/Error Ratio: {service_ratio:.2f}\n\n")
+        
+        # team hit type stats
+        hit_types = ['tip', 'roll_shot', 'free_ball', 'off_speed', 'hit', 'overpass', 'blocked']
+        team_hit_type_avg = df_team_players[[f'pct_{ht}' for ht in hit_types]].mean()
+        for ht in hit_types:
+            f.write(f"  {ht}: {team_hit_type_avg[f'pct_{ht}']:.2f}\n")
+        f.write("\n")
+        
+        # player stats
+        f.write("Player Details:\n")
+        for _, player in df_team_players.iterrows():
             f.write(f"Player {player['jersey_number']}:\n")
             f.write(f"  Total Hits: {player.get('total_hits', 0)}\n")
             f.write(f"  Total Kills: {player.get('total_kills', 0)}\n")
             f.write(f"  Total Hit Errors: {player.get('total_hit_errors', 0)}\n")
             f.write(f"  Hitting Efficiency: {player.get('hitting_efficiency', 0):.2f}\n")
-            f.write(f"  Total Service Aces: {player.get('total_service_aces', 0)}\n")
-            f.write(f"  Total Service Errors: {player.get('total_service_errors', 0)}\n")
-            f.write(f"  Service Ace/Error Ratio: {player.get('service_ace_ratio', 0):.2f}\n")
-            f.write("  Hit Type Percentages:\n")
-            hit_types = ['tip', 'roll_shot', 'free_ball', 'off_speed', 'hit', 'overpass', 'blocked']
-            for ht in hit_types:
-                pct = player.get(f'pct_{ht}', 0)
-                f.write(f"    {ht}: {pct:.2f}\n")
             f.write("\n")
         
+        # plot info
         f.write("Plots included:\n")
-        f.write(f"  Radar plot: radar_team_{team.upper()}.png\n")
-        f.write(f"  Service ratio: service_ratio_team_{team.upper()}.png\n")
+        f.write(f"  Player radial plots: player_hit_types_team_{team.upper()}_*.png\n")
+        f.write(f"  Team radial plot: team_radial_{team.upper()}.png\n")
     
     print(f"Scouting report saved as {report_filename}")
 
+
 def generate_visuals_and_scouting_report(df_players, team_tables):
-    
     for team, df_team in team_tables.items():
         print(f"Generating visuals and report for Team {team.upper()}...")
-        
+
         # extract players for current team
         df_players_team = df_players[df_players['team_name'].str.lower() == team.lower()]
-        
         team_dir = create_team_dir(team)
+
         # player hit type radial plot
         player_radial_plot_hit_types(df_players_team, team, team_dir)
-        
-        # service ace/error ratio plot
-        service_ratio_plot(df_team, team, team_dir)
-        
-        # team hit type radial plot
-        team_radial_plot_hit_types(df_team, team)
-        
-        # boxplots for player stats
-        for stat in ['hitting_efficiency', 'total_kills', 'total_hits']:
-            boxplot_stats(df_players_team, stat, team)
-        
-        # create scouting report
-        create_scouting_report(df_players_team, team, team_dir)
-        
-        print(f"Completed visuals and report for Team {team.upper()}\n")
-    
-    # create comparison boxplots if have stats for more than one team
-    if len(team_tables) >= 2:
-        stats_to_compare = ['hitting_efficiency', 'total_kills', 'total_hits']
-        team_names = list(team_tables.keys())
-        
-        for stat in stats_to_compare:
-            dfs = [df_players[df_players['team_name'].str.lower() == t] for t in team_names]
-            boxplot_team_comparison(*dfs, stat, team_names)
-    
-    print("All visuals and scouting reports generated!")
 
+        # team hit type radial plot
+        team_radial_plot_hit_types(df_players_team, team)
+
+        # service ace/error ratio plot (from team table)
+        service_ratio_plot(df_team, team, team_dir)
+
+        # create scouting report (pass both player-level and team-level)
+        create_scouting_report(df_players_team, df_team, team, team_dir)
+
+        print(f"Completed visuals and report for Team {team.upper()}\n")
+
+    # comparison boxplot for hitting efficiency if two teams
+    team_names = list(team_tables.keys())
+    if len(team_names) >= 2:
+        df_team_a = df_players[df_players['team_name'].str.lower() == team_names[0].lower()]
+        df_team_b = df_players[df_players['team_name'].str.lower() == team_names[1].lower()]
+        boxplot_team_comparison(df_team_a, df_team_b, 'hitting_efficiency', team_names)
+
+    print("All visuals and scouting reports generated!")

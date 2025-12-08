@@ -3,380 +3,156 @@ Scouting Report - Team B
 
 Number of players: 22
 
+Team Summary Statistics:
+  Total Hits: 985
+  Total Kills: 278
+  Total Hit Errors: 102
+  Average Hitting Efficiency: 0.11
+  Total Service Aces: 55352
+  Total Service Errors: 149702
+  Service Ace/Error Ratio: 0.37
+
+  tip: 0.08
+  roll_shot: 0.13
+  free_ball: 0.37
+  off_speed: 0.13
+  hit: 0.56
+  overpass: 0.06
+  blocked: 0.15
+
+Player Details:
 Player 18:
   Total Hits: 0
   Total Kills: 0
   Total Hit Errors: 0
   Hitting Efficiency: nan
-  Total Service Aces: 0
-  Total Service Errors: 0
-  Service Ace/Error Ratio: 0.00
-  Hit Type Percentages:
-    tip: nan
-    roll_shot: nan
-    free_ball: nan
-    off_speed: nan
-    hit: nan
-    overpass: nan
-    blocked: nan
 
 Player 2:
   Total Hits: 0
   Total Kills: 0
   Total Hit Errors: 0
   Hitting Efficiency: nan
-  Total Service Aces: 0
-  Total Service Errors: 0
-  Service Ace/Error Ratio: 0.00
-  Hit Type Percentages:
-    tip: nan
-    roll_shot: nan
-    free_ball: nan
-    off_speed: nan
-    hit: nan
-    overpass: nan
-    blocked: nan
 
 Player 5:
   Total Hits: 0
   Total Kills: 0
   Total Hit Errors: 0
   Hitting Efficiency: nan
-  Total Service Aces: 0
-  Total Service Errors: 0
-  Service Ace/Error Ratio: 0.00
-  Hit Type Percentages:
-    tip: nan
-    roll_shot: nan
-    free_ball: nan
-    off_speed: nan
-    hit: nan
-    overpass: nan
-    blocked: nan
 
 Player 21:
   Total Hits: 0
   Total Kills: 0
   Total Hit Errors: 0
   Hitting Efficiency: nan
-  Total Service Aces: 0
-  Total Service Errors: 0
-  Service Ace/Error Ratio: 0.00
-  Hit Type Percentages:
-    tip: nan
-    roll_shot: nan
-    free_ball: nan
-    off_speed: nan
-    hit: nan
-    overpass: nan
-    blocked: nan
 
 Player 24:
   Total Hits: 0
   Total Kills: 0
   Total Hit Errors: 0
   Hitting Efficiency: nan
-  Total Service Aces: 0
-  Total Service Errors: 0
-  Service Ace/Error Ratio: 0.00
-  Hit Type Percentages:
-    tip: nan
-    roll_shot: nan
-    free_ball: nan
-    off_speed: nan
-    hit: nan
-    overpass: nan
-    blocked: nan
 
 Player 4:
   Total Hits: 1
   Total Kills: 0
   Total Hit Errors: 0
   Hitting Efficiency: 0.00
-  Total Service Aces: 0
-  Total Service Errors: 0
-  Service Ace/Error Ratio: 0.00
-  Hit Type Percentages:
-    tip: nan
-    roll_shot: nan
-    free_ball: 1.00
-    off_speed: nan
-    hit: nan
-    overpass: nan
-    blocked: nan
 
 Player 3:
   Total Hits: 1
   Total Kills: 0
   Total Hit Errors: 0
   Hitting Efficiency: 0.00
-  Total Service Aces: 0
-  Total Service Errors: 0
-  Service Ace/Error Ratio: 0.00
-  Hit Type Percentages:
-    tip: nan
-    roll_shot: nan
-    free_ball: 1.00
-    off_speed: nan
-    hit: nan
-    overpass: nan
-    blocked: nan
 
 Player 1:
   Total Hits: 1
   Total Kills: 0
   Total Hit Errors: 0
   Hitting Efficiency: 0.00
-  Total Service Aces: 0
-  Total Service Errors: 0
-  Service Ace/Error Ratio: 0.00
-  Hit Type Percentages:
-    tip: nan
-    roll_shot: nan
-    free_ball: 1.00
-    off_speed: nan
-    hit: nan
-    overpass: nan
-    blocked: nan
 
 Player 17:
   Total Hits: 2
   Total Kills: 0
   Total Hit Errors: 0
   Hitting Efficiency: 0.00
-  Total Service Aces: 0
-  Total Service Errors: 0
-  Service Ace/Error Ratio: 0.00
-  Hit Type Percentages:
-    tip: nan
-    roll_shot: 0.50
-    free_ball: 0.50
-    off_speed: nan
-    hit: nan
-    overpass: nan
-    blocked: nan
 
 Player 7:
   Total Hits: 5
   Total Kills: 2
   Total Hit Errors: 1
   Hitting Efficiency: 0.20
-  Total Service Aces: 0
-  Total Service Errors: 0
-  Service Ace/Error Ratio: 0.00
-  Hit Type Percentages:
-    tip: nan
-    roll_shot: nan
-    free_ball: nan
-    off_speed: 0.40
-    hit: 0.60
-    overpass: nan
-    blocked: nan
 
 Player 10:
   Total Hits: 10
   Total Kills: 2
   Total Hit Errors: 0
   Hitting Efficiency: 0.20
-  Total Service Aces: 0
-  Total Service Errors: 0
-  Service Ace/Error Ratio: 0.00
-  Hit Type Percentages:
-    tip: nan
-    roll_shot: nan
-    free_ball: 0.20
-    off_speed: 0.30
-    hit: 0.50
-    overpass: nan
-    blocked: nan
 
 Player 16:
   Total Hits: 8
   Total Kills: 1
   Total Hit Errors: 2
   Hitting Efficiency: -0.12
-  Total Service Aces: 0
-  Total Service Errors: 0
-  Service Ace/Error Ratio: 0.00
-  Hit Type Percentages:
-    tip: nan
-    roll_shot: nan
-    free_ball: 0.62
-    off_speed: nan
-    hit: 0.38
-    overpass: nan
-    blocked: nan
 
 Player 25:
   Total Hits: 5
   Total Kills: 0
   Total Hit Errors: 0
   Hitting Efficiency: 0.00
-  Total Service Aces: 0
-  Total Service Errors: 0
-  Service Ace/Error Ratio: 0.00
-  Hit Type Percentages:
-    tip: nan
-    roll_shot: nan
-    free_ball: 0.60
-    off_speed: 0.20
-    hit: nan
-    overpass: 0.20
-    blocked: nan
 
 Player 15:
   Total Hits: 418
   Total Kills: 106
   Total Hit Errors: 42
   Hitting Efficiency: 0.15
-  Total Service Aces: 0
-  Total Service Errors: 0
-  Service Ace/Error Ratio: 0.00
-  Hit Type Percentages:
-    tip: 0.04
-    roll_shot: 0.05
-    free_ball: 0.01
-    off_speed: 0.06
-    hit: 0.66
-    overpass: nan
-    blocked: 0.18
 
 Player 9:
   Total Hits: 30
   Total Kills: 11
   Total Hit Errors: 2
   Hitting Efficiency: 0.30
-  Total Service Aces: 0
-  Total Service Errors: 0
-  Service Ace/Error Ratio: 0.00
-  Hit Type Percentages:
-    tip: 0.10
-    roll_shot: 0.03
-    free_ball: 0.20
-    off_speed: nan
-    hit: 0.63
-    overpass: nan
-    blocked: 0.03
 
 Player 8:
   Total Hits: 26
   Total Kills: 7
   Total Hit Errors: 4
   Hitting Efficiency: 0.12
-  Total Service Aces: 0
-  Total Service Errors: 0
-  Service Ace/Error Ratio: 0.00
-  Hit Type Percentages:
-    tip: 0.08
-    roll_shot: nan
-    free_ball: 0.12
-    off_speed: 0.08
-    hit: 0.54
-    overpass: 0.04
-    blocked: 0.15
 
 Player 6:
   Total Hits: 48
   Total Kills: 19
   Total Hit Errors: 5
   Hitting Efficiency: 0.29
-  Total Service Aces: 0
-  Total Service Errors: 0
-  Service Ace/Error Ratio: 0.00
-  Hit Type Percentages:
-    tip: 0.02
-    roll_shot: 0.02
-    free_ball: 0.02
-    off_speed: 0.02
-    hit: 0.77
-    overpass: nan
-    blocked: 0.15
 
 Player 26:
   Total Hits: 9
   Total Kills: 0
   Total Hit Errors: 1
   Hitting Efficiency: -0.11
-  Total Service Aces: 0
-  Total Service Errors: 0
-  Service Ace/Error Ratio: 0.00
-  Hit Type Percentages:
-    tip: nan
-    roll_shot: 0.33
-    free_ball: 0.22
-    off_speed: 0.11
-    hit: 0.11
-    overpass: nan
-    blocked: 0.22
 
 Player 13:
   Total Hits: 136
   Total Kills: 47
   Total Hit Errors: 15
   Hitting Efficiency: 0.24
-  Total Service Aces: 0
-  Total Service Errors: 0
-  Service Ace/Error Ratio: 0.00
-  Hit Type Percentages:
-    tip: 0.11
-    roll_shot: 0.01
-    free_ball: 0.01
-    off_speed: 0.10
-    hit: 0.65
-    overpass: 0.01
-    blocked: 0.11
 
 Player 14:
   Total Hits: 93
   Total Kills: 28
   Total Hit Errors: 9
   Hitting Efficiency: 0.20
-  Total Service Aces: 0
-  Total Service Errors: 0
-  Service Ace/Error Ratio: 0.00
-  Hit Type Percentages:
-    tip: 0.09
-    roll_shot: 0.04
-    free_ball: 0.05
-    off_speed: 0.10
-    hit: 0.56
-    overpass: 0.01
-    blocked: 0.15
 
 Player 11:
   Total Hits: 164
   Total Kills: 45
   Total Hit Errors: 18
   Hitting Efficiency: 0.16
-  Total Service Aces: 0
-  Total Service Errors: 0
-  Service Ace/Error Ratio: 0.00
-  Hit Type Percentages:
-    tip: 0.07
-    roll_shot: 0.03
-    free_ball: nan
-    off_speed: 0.05
-    hit: 0.64
-    overpass: nan
-    blocked: 0.20
 
 Player 12:
   Total Hits: 28
   Total Kills: 10
   Total Hit Errors: 3
   Hitting Efficiency: 0.25
-  Total Service Aces: 0
-  Total Service Errors: 0
-  Service Ace/Error Ratio: 0.00
-  Hit Type Percentages:
-    tip: 0.14
-    roll_shot: nan
-    free_ball: 0.04
-    off_speed: 0.04
-    hit: 0.68
-    overpass: nan
-    blocked: 0.11
 
 Plots included:
-  Radar plot: radar_team_B.png
-  Service ratio: service_ratio_team_B.png
+  Player radial plots: player_hit_types_team_B_*.png
+  Team radial plot: team_radial_B.png
