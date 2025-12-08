@@ -114,7 +114,8 @@ Output:
 │   ├── teamA/
 │   └── teamB/
 ├── README.md               
-└── requirements.txt    
+├── requirements.txt        
+└── .gitignore
 ```   
 
 ---
