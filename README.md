@@ -74,8 +74,8 @@ The project uses three SQL tables:
 ## Setup and Running the Project
 1. Clone the repository:
 ```bash
-git clone <repository_url>
-cd <repository_folder>
+git clone https://github.com/kwibbeler/DBFinalProjectVolleyball
+cd DBFinalProjectVolleyball
 ```
 
 2. Create Virtual Environment:
