@@ -94,7 +94,7 @@ Modify `main.py` to point to your database connection.
 
 5. Run the script to generate visuals and scouting reports:
 ```bash
-python `main.py`
+python main.py
 ```
 
 Output:
