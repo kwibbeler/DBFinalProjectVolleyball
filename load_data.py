@@ -95,7 +95,6 @@ def create_derived_tables(cursor):
     total_passes INTEGER DEFAULT 0,
     total_digs INTEGER DEFAULT 0,
     total_blocks INTEGER DEFAULT 0,
-    total_serves INTEGER DEFAULT 0,
     UNIQUE (jersey_number, team_name)
     )""")
 
