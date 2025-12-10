@@ -113,7 +113,8 @@ Output:
 ├── plots/                   
 │   ├── teamA/
 │   └── teamB/
-├── README.md               
+├── README.md    
+├── Project_ERD.pdf        
 ├── requirements.txt        
 └── .gitignore
 ```   
